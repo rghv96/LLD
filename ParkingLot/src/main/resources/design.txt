@@ -1,0 +1,23 @@
+ParkingLotSystem
+- map parkinglots
+- map vehicles
+
+ParkingLot
+- int id
+- map bike parking spots
+- map 4 wheeler parking spots
+- Ratecard rc
+
+abstract Parking Spot
+- int id
+- type
+- vehicle
+- boolean free
+
+RateCard
+- map int, double
+
+Vehicle
+-enum vechicle type
+- licenseNo
+- parking ticket

@@ -1,0 +1,28 @@
+User
+-id
+-ledger
+
+Expense
+-id
+-List<Split> splits
+
+Split
+-id
+-expenseID
+-userID
+-amount
+
+Settlement
+-id
+-senderID
+-receiverID
+
+Ledger
+-id
+-userID
+-amount
+-createdAt
+
+
+enums:
+splitType: percentage, absolute
