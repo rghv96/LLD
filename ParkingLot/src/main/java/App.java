@@ -1,4 +1,5 @@
 import enums.VehicleType;
+import io.github.pixee.security.BoundedLineReader;
 import models.ParkingLot;
 import models.Vehicle;
 import services.ParkingLotManager;
@@ -19,8 +20,8 @@ public class App {
         ParkingLotManager parkingLotManager = new ParkingLotManagerImpl(vehicleManager);
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String input1 = bufferedReader.readLine();
-        String input2 = bufferedReader.readLine();
+        String input1 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
+        String input2 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
 
         do {
             String methodName = input1.trim();
@@ -64,8 +65,8 @@ public class App {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            input1 = bufferedReader.readLine();
-            input2 = bufferedReader.readLine();
+            input1 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
+            input2 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
 
         } while(input1 != null && !input1.isEmpty() && input2 != null && !input2.isEmpty());
         bufferedReader.close();

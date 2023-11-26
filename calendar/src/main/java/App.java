@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import services.UserManagerImpl;
 
 import java.io.BufferedReader;
@@ -10,8 +11,8 @@ public class App {
     public static void main(String[] args) throws IOException {
         UserManagerImpl userManager = new UserManagerImpl();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String input1 = bufferedReader.readLine();
-        String input2 = bufferedReader.readLine();
+        String input1 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
+        String input2 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
 
         do {
             String method = input1.trim();
@@ -43,8 +44,8 @@ public class App {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            input1 = bufferedReader.readLine();
-            input2 = bufferedReader.readLine();
+            input1 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
+            input2 = BoundedLineReader.readLine(bufferedReader, 5_000_000);
         } while(input1 != null && !input1.isEmpty() && input2 != null && !input2.isEmpty());
         bufferedReader.close();
     }
