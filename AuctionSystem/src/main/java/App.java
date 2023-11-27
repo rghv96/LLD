@@ -21,35 +21,35 @@ public class App {
             String[] arguments = input2.trim().split(" ");
 
             try {
-                if(methodName.equals("addBuyer")) {
+                if("addBuyer".equals(methodName)) {
                     buyerManager.createBuyer(arguments[0]);
-                } else if(methodName.equals("addSeller")) {
+                } else if("addSeller".equals(methodName)) {
                     sellerManager.createSeller(arguments[0]);
-                } else if(methodName.equals("createAuction")) {
+                } else if("createAuction".equals(methodName)) {
                     String auctionID = arguments[0];
                     Double lowBid = Double.parseDouble(arguments[1]);
                     Double highBid = Double.parseDouble(arguments[2]);
                     Double pc = Double.parseDouble(arguments[3]);
                     String sellerID = arguments[4];
                     auctionManager.createAuction(auctionID, lowBid, highBid, pc, sellerID);
-                } else if(methodName.equals("createBid")) {
+                } else if("createBid".equals(methodName)) {
                     String buyerID = arguments[0];
                     String auctionID = arguments[1];
                     Double bid = Double.parseDouble(arguments[2]);
                     auctionManager.createBid(buyerID, auctionID, bid);
-                } else if(methodName.equals("updateBid")) {
+                } else if("updateBid".equals(methodName)) {
                     String buyerID = arguments[0];
                     String auctionID = arguments[1];
                     Double bid = Double.parseDouble(arguments[2]);
                     auctionManager.updateBid(buyerID, auctionID, bid);
-                } else if(methodName.equals("withdrawBid")) {
+                } else if("withdrawBid".equals(methodName)) {
                     String buyerID = arguments[0];
                     String auctionID = arguments[1];
                     auctionManager.withdrawBid(buyerID, auctionID);
-                } else if(methodName.equals("closeAuction")) {
+                } else if("closeAuction".equals(methodName)) {
                     String auctionID = arguments[0];
                     auctionManager.closeAuction(auctionID);
-                } else if(methodName.equals("getProfit")) {
+                } else if("getProfit".equals(methodName)) {
                     String sellerID = arguments[0];
                     String auctionID = arguments[1];
                     auctionManager.getSellerProfit(sellerID, auctionID);

@@ -17,7 +17,7 @@ public class App {
             String method = input1.trim();
             String[] arguments = input2.trim().split(" ");
             try {
-                if(method.equals("addSlots")) {
+                if("addSlots".equals(method)) {
                     Integer userID = Integer.parseInt(arguments[0]);
                     Integer numSlots = Integer.parseInt(arguments[1]);
                     List<Integer> times = new ArrayList<Integer>();
@@ -29,7 +29,7 @@ public class App {
                     }
                     userManager.addSlots(userID, times);
                 }
-                else if(method.equals("availableSlots")) {
+                else if("availableSlots".equals(method)) {
                     Integer userID = Integer.parseInt(arguments[0]);
                     Integer time = Integer.parseInt(arguments[1]);
                     userManager.getAvailableSlots(userID, time);

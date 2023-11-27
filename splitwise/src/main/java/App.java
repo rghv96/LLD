@@ -32,11 +32,11 @@ public class App {
             String[] arguments = input2.trim().split(" ");
 
             try {
-                if(methodName.equals("printBalance")) {
+                if("printBalance".equals(methodName)) {
                     balanceManager.printBalance(Integer.parseInt(arguments[0]));
-                } else if(methodName.equals("settle")) {
+                } else if("settle".equals(methodName)) {
                     settlementManager.settle(Integer.parseInt(arguments[0]), Integer.parseInt(arguments[1]));
-                } else if(methodName.equals("addExpense")){
+                } else if("addExpense".equals(methodName)){
                     Integer payerID = Integer.parseInt(arguments[0]);
                     Double totalAmt = Double.parseDouble(arguments[1]);
                     SplitType splitType = SplitType.valueOf(arguments[2]);

@@ -27,17 +27,17 @@ public class App {
             String[] arguments = input2.trim().split(" ");
 
             try {
-                if(methodName.equals("createVehicle")) {
+                if("createVehicle".equals(methodName)) {
                     Integer id = Integer.parseInt(arguments[0]);
                     VehicleType vehicleType = VehicleType.valueOf(arguments[1]);
                     vehicleManager.createVehicle(id, vehicleType);
                 } else
-                if(methodName.equals("createParkingLot")) {
+                if("createParkingLot".equals(methodName)) {
                     Integer id = Integer.parseInt(arguments[0]);
                     Integer bikeSpots = Integer.parseInt(arguments[1]);
                     Integer carSpots = Integer.parseInt(arguments[2]);
                     parkingLotManager.createParkingLot(id, bikeSpots, carSpots);
-                } else if(methodName.equals("addRateCard")) {
+                } else if("addRateCard".equals(methodName)) {
                     Integer id = Integer.parseInt(arguments[0]);
                     VehicleType vehicleType = VehicleType.valueOf(arguments[1]);
                     Integer numRecords = Integer.parseInt(arguments[2]);
@@ -52,10 +52,10 @@ public class App {
                     }
                     Double finalPrice = Double.parseDouble(arguments[3 + i]);
                     parkingLotManager.addRateCard(id, vehicleType, hm, finalPrice);
-                } else if(methodName.equals("getVehicleHistory")) {
+                } else if("getVehicleHistory".equals(methodName)) {
                     Integer id = Integer.parseInt(arguments[0]);
                     vehicleManager.getHistory(id);
-                } else if(methodName.equals("parkVehicle")) {
+                } else if("parkVehicle".equals(methodName)) {
                     Integer vehicleId = Integer.parseInt(arguments[0]);
                     Integer parkingLotId = Integer.parseInt(arguments[1]);
                     Integer timeIN = Integer.parseInt(arguments[2]);
